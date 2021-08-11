@@ -1,0 +1,11 @@
+<div class="grad-program-list">
+{% for person in cms.helper('program-grads').sortNames(text) %}
+<div class="grad-program-person">
+{% if person.text %}
+{{person.name}}, <em>{{person.text}}</em>
+{% else %}
+{{person.name}}
+{% endif %}
+</div>
+{% endfor %}
+</div>

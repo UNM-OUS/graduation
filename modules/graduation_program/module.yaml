@@ -1,0 +1,35 @@
+grad-program:
+  stringcorrections:
+    categories:
+      - college
+      - program
+
+types:
+  content:
+    program-grads: ${module.namespace}\GradsPage
+    program-honors: ${module.namespace}\HonorsPage
+
+permissions:
+  url:
+    program-grads/display: [allow all]
+    program-grads/stringcorrections: [allow group editor]
+    program-honors/display: [allow all]
+
+actions:
+  proper:
+    program-grads:
+      stringcorrections: '!id/stringcorrections'
+
+helpers:
+  classes:
+    program-grads: ${module.namespace}\GradProgramHelper
+
+defaultnounbytype:
+  program-grads:
+    digraph:
+      slugpattern: "[parent]/[name]"
+
+strings:
+  urls:
+    proper:
+      program-grads/stringcorrections: string corrections

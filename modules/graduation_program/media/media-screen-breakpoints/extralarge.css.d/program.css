@@ -1,0 +1,7 @@
+.grad-program-list {
+    columns: 5;
+
+    &.long-lines {
+        columns: 3;
+    }
+}
