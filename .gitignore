@@ -1,7 +1,3 @@
-# ignore composer.lock
-# depending on your deploy system, you may not want this
-composer.lock
-
 # BEGIN DIGRAPH-MANAGED: GITIGNORE
 # Do not edit this code, it will be replaced whenever composer update/install runs
 # digraph-project-core/files/gitignore => .gitignore
