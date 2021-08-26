@@ -13,7 +13,8 @@ permissions:
     convocation-org/*: [deny all]
     convocation-org/convocation-coord: [allow group editor]
   url:
-    _convocationmanagement/*: [deny all, "allow group editor, convocation-coordinator"]
+    _convocationmanagement/*: [deny all, "allow group editor"]
+    _convocationmanagement/display: [deny all, "allow group editor, convocation-coordinator"]
     convocation-coord/display: [deny all, "allow group editor, convocation-coordinator"]
     convocation-org/manage: [allow group editor]
     convocation-org/add-convocation: [allow group editor]
@@ -51,6 +52,7 @@ strings:
       convocation-org/manage: manage
     common:
       _convocationmanagement/display: Convocation dashboard
+      _convocationmanagement/listcoordinators: List coordinators
 
 users:
   groups:

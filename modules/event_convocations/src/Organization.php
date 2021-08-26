@@ -1,4 +1,5 @@
 <?php
+
 namespace Digraph\Modules\event_convocations;
 
 use Digraph\DSO\Noun;
@@ -57,6 +58,11 @@ class Organization extends Noun
         return null;
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return Coordinator[]
+     */
     public function coordinators(): array
     {
         return $this->cms()->helper('graph')->children($this['dso.id'], 'convocation-coordinator');
