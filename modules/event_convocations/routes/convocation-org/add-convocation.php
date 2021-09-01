@@ -14,7 +14,7 @@ foreach ($this->helper('routing')->allHookFiles($type, 'form_add.php') as $file)
     include $file['file'];
 }
 
-$cms->helper('notifications')->warning('Due to COVID restrictions in-person events will require event approval through the request portal: <a href="http://campusexperience.unm.edu/resources/unm-event-request.html">Bringing Back the Pack – UNM Event Request</a>. Please ensure your event has been approved before adding it here.');
+// $cms->helper('notifications')->warning('Due to COVID restrictions in-person events will require event approval through the request portal: <a href="http://campusexperience.unm.edu/resources/unm-event-request.html">Bringing Back the Pack – UNM Event Request</a>. Please ensure your event has been approved before adding it here.');
 
 $form->handle(
     function ($form) use ($package, $type) {
