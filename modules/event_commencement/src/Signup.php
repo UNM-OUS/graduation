@@ -8,13 +8,6 @@ use Digraph\Modules\ous_event_regalia\Signup as Ous_event_regaliaSignup;
 
 class Signup extends Ous_event_regaliaSignup
 {
-    const DCATS = [
-        'Juris Doctor' => 'Doctoral/Terminal',
-        'PHD' => 'Doctoral/Terminal',
-        'MFA' => 'Doctoral/Terminal',
-        'EDD' => 'Doctoral/Terminal',
-        'DNP' => 'Doctoral/Terminal',
-    ];
 
     protected function myChunks(): array
     {
@@ -29,28 +22,7 @@ class Signup extends Ous_event_regaliaSignup
 
     public function degreeCategory()
     {
-        if ($cat = $this['degree.degree_val.category']) {
-            if ($cat == 'Graduate') {
-                // first check for full-name, like Juris Doctor
-                $deg = $this['degree.degree_val.program'];
-                if (@static::DCATS[$deg]) {
-                    return static::DCATS[$deg];
-                }
-                if (substr($deg, 0, 7) == 'Doctor ') {
-                    return 'Doctoral/Terminal';
-                }
-                // then check first word, which will be the abbreviation
-                $deg = explode(' ', $this['degree.degree_val.program'])[0];
-                if (@static::DCATS[$deg]) {
-                    return static::DCATS[$deg];
-                }
-                // return master by default
-                return 'Master';
-            } else {
-                return $cat;
-            }
-        }
-        return '?';
+        return SignupWindow::degreeLevel($this['degree.degree_val']);
     }
 
     public function customDegree(): ?array

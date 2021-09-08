@@ -218,16 +218,16 @@
         },
         {
             "name": "byjoby/formward",
-            "version": "v0.3.4",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jobyone/formward.git",
-                "reference": "f87023675a6e8042d928bffbb1f683461ddf459d"
+                "reference": "cc44679f8b474a2f8a7479c6b378f0d5f89ae941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jobyone/formward/zipball/f87023675a6e8042d928bffbb1f683461ddf459d",
-                "reference": "f87023675a6e8042d928bffbb1f683461ddf459d",
+                "url": "https://api.github.com/repos/jobyone/formward/zipball/cc44679f8b474a2f8a7479c6b378f0d5f89ae941",
+                "reference": "cc44679f8b474a2f8a7479c6b378f0d5f89ae941",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 "php": ">=7.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.3",
+                "phpunit/phpunit": "^9.5",
                 "stevegrunwell/phpunit-markup-assertions": "^1.2",
                 "symfony/yaml": "^3.4"
             },
@@ -263,9 +263,9 @@
             "description": "Forms with sane defaults and simple interfaces to skip the boilerplate code and just put a form on the page",
             "support": {
                 "issues": "https://github.com/jobyone/formward/issues",
-                "source": "https://github.com/jobyone/formward/tree/v0.3.4"
+                "source": "https://github.com/jobyone/formward/tree/v0.4.1"
             },
-            "time": "2021-04-27T14:25:16+00:00"
+            "time": "2021-09-08T17:53:06+00:00"
         },
         {
             "name": "byjoby/html-object-strings",
@@ -724,17 +724,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "4f664bc2f3a922cf83ba9ada1f99d302c0f54060"
+                "reference": "0d473c18cb0992e2f7e0abf512e6a9dbc65f528a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/4f664bc2f3a922cf83ba9ada1f99d302c0f54060",
-                "reference": "4f664bc2f3a922cf83ba9ada1f99d302c0f54060",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/0d473c18cb0992e2f7e0abf512e6a9dbc65f528a",
+                "reference": "0d473c18cb0992e2f7e0abf512e6a9dbc65f528a",
                 "shasum": ""
             },
             "require": {
                 "byjoby/destructr": "^1.5",
-                "byjoby/formward": "^0.3",
+                "byjoby/formward": "^0.4",
                 "byjoby/html-object-strings": "dev-main",
                 "byjoby/sesh": "^0.1.0",
                 "css-crush/css-crush": "^2.4",
@@ -786,7 +786,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v1"
             },
-            "time": "2021-08-18T14:54:17+00:00"
+            "time": "2021-09-08T17:56:03+00:00"
         },
         {
             "name": "digraphcms/digraph-core-themes",

@@ -1,6 +1,7 @@
 types:
   content:
     event-signup: ${module.namespace}\Signup
+    event-signupwindow: ${module.namespace}\SignupWindow
 
 events:
   forms:
@@ -35,6 +36,16 @@ events:
       volunteers-2021:
         contact: Digraph\Modules\ous_event_management\Chunks\Contact\ContactInformation
         unm: Digraph\Modules\ous_event_management\Chunks\UNMAffiliation
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
+      fall-2021-student:
+        contact: ${module.namespace}\Chunks\GraduationContactInfo
+        degree: ${module.namespace}\DegreeChunks\SingleDegree
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
+      fall-2021-student-doctoral:
+        contact: ${module.namespace}\Chunks\GraduationContactInfo
+        degree: ${module.namespace}\DegreeChunks\SingleDegree
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
         waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
 
 permissions:
