@@ -1,0 +1,3 @@
+helpers:
+  classes:
+    deactivated-netids: ${module.namespace}\DeactivatedNetidHelper
