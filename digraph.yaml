@@ -4,8 +4,6 @@ package:
     fields:
       site_name: Graduation Events
 
-secret: bf74934c-69e8-5ca6-9b2c-a938fb9e3123
-
 slugs:
   allow_ambiguity: false
 
