@@ -1,6 +1,19 @@
 types:
   content:
     event-signup: ${module.namespace}\Signup
+    event-signupwindow: ${module.namespace}\SignupWindow
+
+factory_columns:
+  content:
+    contact__firstname:
+      type: VARCHAR(150)
+      index: BTREE
+    contact__lastname:
+      type: VARCHAR(150)
+      index: BTREE
+    contact__email;
+      type: VARCHAR(150)
+      index: BTREE
 
 events:
   forms:
@@ -32,9 +45,25 @@ events:
         contact: Digraph\Modules\ous_event_management\Chunks\Contact\ContactInformation
         degree: ${module.namespace}\DegreeChunks\AllDegrees
         story: ${module.namespace}\Chunks\InspirationalStory
+      faculty-2021:
+        contact: Digraph\Modules\ous_event_management\Chunks\Contact\FacultyContactInformation
+        unm: Digraph\Modules\ous_event_management\Chunks\UNMAffiliation
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
       volunteers-2021:
         contact: Digraph\Modules\ous_event_management\Chunks\Contact\ContactInformation
         unm: Digraph\Modules\ous_event_management\Chunks\UNMAffiliation
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
+      fall-2021-student:
+        contact: ${module.namespace}\Chunks\GraduationContactInfo
+        degree: ${module.namespace}\DegreeChunks\SingleDegree
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
+      fall-2021-student-doctoral:
+        contact: ${module.namespace}\Chunks\GraduationContactInfo
+        degree: ${module.namespace}\DegreeChunks\SingleDegree
+        hooder: ${module.namespace}\Chunks\Hooder
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
         waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
 
 permissions:
