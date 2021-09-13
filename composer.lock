@@ -865,16 +865,16 @@
         },
         {
             "name": "digraphcms/digraph-project-core",
-            "version": "v1.1.5",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-project-core.git",
-                "reference": "396f86cf21a53aead17b2e0872ca2f30f1461f7d"
+                "reference": "2562573a993e487b2b784c3e377ca691adeecc3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-project-core/zipball/396f86cf21a53aead17b2e0872ca2f30f1461f7d",
-                "reference": "396f86cf21a53aead17b2e0872ca2f30f1461f7d",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-project-core/zipball/2562573a993e487b2b784c3e377ca691adeecc3a",
+                "reference": "2562573a993e487b2b784c3e377ca691adeecc3a",
                 "shasum": ""
             },
             "require": {
@@ -902,9 +902,9 @@
             "description": "Package to allow Digraph projects created using digraph-project to have many default config options, file creation scripts, and other boilerplate tracked by Composer.",
             "support": {
                 "issues": "https://github.com/digraph-cms/digraph-project-core/issues",
-                "source": "https://github.com/digraph-cms/digraph-project-core/tree/v1.1.5"
+                "source": "https://github.com/digraph-cms/digraph-project-core/tree/v1.1.7"
             },
-            "time": "2021-09-13T16:43:46+00:00"
+            "time": "2021-09-13T17:08:21+00:00"
         },
         {
             "name": "envms/fluentpdo",

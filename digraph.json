@@ -1,0 +1,57 @@
+{
+  "package": {
+    "defaults": {
+      "fields": {
+        "site_name": "Graduation Events"
+      }
+    }
+  },
+  "slugs": {
+    "allow_ambiguity": false
+  },
+  "timezone": "America/Denver",
+  "users": {
+    "defaultmanager": "netid"
+  },
+  "actions": {
+    "uiforguests": false
+  },
+  "permissions": {
+    "events": {
+      "signups/viewall": [
+        "allow group convocation-coordinator, event-volunteer"
+      ],
+      "form/signupothers": [
+        "allow group convocation-coordinator, event-volunteer"
+      ],
+      "form/ignoredeadlines": [
+        "allow group event-volunteer"
+      ]
+    }
+  },
+  "image": {
+    "driver": "gd"
+  },
+  "paths": {
+    "storage": "${paths.site}/digraph/storage",
+    "cache": "${paths.site}/digraph/cache",
+    "assets": "${paths.site}/web/assets"
+  },
+  "theme": {
+    "variables": {
+      "_override": {
+        "color_accent": "#c05131"
+      }
+    }
+  },
+  "templates": {
+    "theme": [
+      "unm-v1"
+    ]
+  },
+  "strings": {
+    "events": {
+      "notallowed": "<p>You are not on the list of users allowed to use this form.</p>\n<p>If you believe this is in error, please first contact your academic advisor if you are a student.</p>\n<p>If you are not a student, or you have checked with your advisor and are sure your degree records are in Banner, please contact the Office of the University Secretary. To allow any problem to be investigated as quickly as possible, include your main campus NetID and the URL of this page.</p>\n"
+    }
+  }
+}
