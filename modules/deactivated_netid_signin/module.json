@@ -16,5 +16,12 @@
         "allow all"
       ]
     }
+  },
+  "bootstrap": {
+    "pdos": {
+      "oldnetids": {
+        "dsn": "sqlite:${paths.storage}/oldnetids.sqlite"
+      }
+    }
   }
 }
