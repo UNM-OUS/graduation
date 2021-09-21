@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96c6ce3c10d4263fa7c215da6d2e498f",
+    "content-hash": "8b0a004cafed3348321e947db9542678",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -174,16 +174,16 @@
         },
         {
             "name": "byjoby/flatrr",
-            "version": "v1.3.5",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jobyone/flatrr.git",
-                "reference": "188dffe8d5bd7399545550b5e48ea3ab65a5cf36"
+                "reference": "61d24eb3e8ed30fbe8156f51c4d08d248903f387"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jobyone/flatrr/zipball/188dffe8d5bd7399545550b5e48ea3ab65a5cf36",
-                "reference": "188dffe8d5bd7399545550b5e48ea3ab65a5cf36",
+                "url": "https://api.github.com/repos/jobyone/flatrr/zipball/61d24eb3e8ed30fbe8156f51c4d08d248903f387",
+                "reference": "61d24eb3e8ed30fbe8156f51c4d08d248903f387",
                 "shasum": ""
             },
             "require": {
@@ -212,22 +212,22 @@
             "description": "A library for working with multi-dimensional arrays through flattened keys",
             "support": {
                 "issues": "https://github.com/jobyone/flatrr/issues",
-                "source": "https://github.com/jobyone/flatrr/tree/v1.3.5"
+                "source": "https://github.com/jobyone/flatrr/tree/v1.4.0"
             },
-            "time": "2021-09-08T16:37:13+00:00"
+            "time": "2021-09-13T16:52:13+00:00"
         },
         {
             "name": "byjoby/formward",
-            "version": "v0.4.1",
+            "version": "v0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jobyone/formward.git",
-                "reference": "cc44679f8b474a2f8a7479c6b378f0d5f89ae941"
+                "reference": "3de4b1fce741afa21afe43723a6b965ca85db173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jobyone/formward/zipball/cc44679f8b474a2f8a7479c6b378f0d5f89ae941",
-                "reference": "cc44679f8b474a2f8a7479c6b378f0d5f89ae941",
+                "url": "https://api.github.com/repos/jobyone/formward/zipball/3de4b1fce741afa21afe43723a6b965ca85db173",
+                "reference": "3de4b1fce741afa21afe43723a6b965ca85db173",
                 "shasum": ""
             },
             "require": {
@@ -263,9 +263,9 @@
             "description": "Forms with sane defaults and simple interfaces to skip the boilerplate code and just put a form on the page",
             "support": {
                 "issues": "https://github.com/jobyone/formward/issues",
-                "source": "https://github.com/jobyone/formward/tree/v0.4.1"
+                "source": "https://github.com/jobyone/formward/tree/v0.4.2"
             },
-            "time": "2021-09-08T17:53:06+00:00"
+            "time": "2021-09-17T17:04:44+00:00"
         },
         {
             "name": "byjoby/html-object-strings",
@@ -2677,12 +2677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "12e9ca04d0a00ed9ca7d4eb4aae7ef56b6050d7b"
+                "reference": "4a6894ae244b6b8faafecd5be1d232d73889b64d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/12e9ca04d0a00ed9ca7d4eb4aae7ef56b6050d7b",
-                "reference": "12e9ca04d0a00ed9ca7d4eb4aae7ef56b6050d7b",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/4a6894ae244b6b8faafecd5be1d232d73889b64d",
+                "reference": "4a6894ae244b6b8faafecd5be1d232d73889b64d",
                 "shasum": ""
             },
             "require": {
@@ -2699,7 +2699,7 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2021-09-13T15:30:48+00:00"
+            "time": "2021-09-21T15:26:29+00:00"
         },
         {
             "name": "unmous/ous_event_management",
@@ -2707,12 +2707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_event_management.git",
-                "reference": "f77e8b8ec444076d782b67b7e49444c83124993b"
+                "reference": "55cec793accc3ef66443b47986492bc0e5a47e98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_event_management/zipball/f77e8b8ec444076d782b67b7e49444c83124993b",
-                "reference": "f77e8b8ec444076d782b67b7e49444c83124993b",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_event_management/zipball/55cec793accc3ef66443b47986492bc0e5a47e98",
+                "reference": "55cec793accc3ef66443b47986492bc0e5a47e98",
                 "shasum": ""
             },
             "require": {
@@ -2732,7 +2732,7 @@
                 "source": "https://github.com/UNM-OUS/ous_event_management/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_event_management/issues"
             },
-            "time": "2021-09-13T15:37:21+00:00"
+            "time": "2021-09-16T15:16:08+00:00"
         },
         {
             "name": "unmous/ous_event_regalia",
