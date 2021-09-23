@@ -34,6 +34,7 @@ $form['netid']->addValidatorFunction(
     }
 );
 if ($form->handle()) {
+    $helper->message($form['netid']->value());
 }
 echo $form;
 
