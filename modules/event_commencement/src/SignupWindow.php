@@ -2,6 +2,7 @@
 
 namespace Digraph\Modules\event_commencement;
 
+use Digraph\Modules\ous_digraph_module\Users\NetIDUser;
 use Digraph\Modules\ous_event_regalia\SignupWindow as Ous_event_regaliaSignupWindow;
 use Formward\Fields\CheckboxList;
 
@@ -14,6 +15,32 @@ class SignupWindow extends Ous_event_regaliaSignupWindow
         'EDD' => 'Doctoral/Terminal',
         'DNP' => 'Doctoral/Terminal',
     ];
+
+    protected $emailVerificationNotified;
+
+    public function signupAllowed(): bool
+    {
+        if (parent::signupAllowed()) {
+            /** @var \Digraph\Users\UserInterface */
+            $user = $this->cms()->helper('users')->user();
+            if ($user && !($user instanceof NetIDUser)) {
+                if ($user['email.verified']) {
+                    return true;
+                } else {
+                    if (!$this->emailVerificationNotified) {
+                        $url = $this->cms()->helper('urls')->parse('_user/verify');
+                        $this->cms()->helper('notifications')->printError("You must <a href='$url'>verify your email</a> to use \"" . $this->name()."\"");
+                        $this->emailVerificationNotified = true;
+                    }
+                    return false;
+                }
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
 
     public static function degreeLevel(array $degree): string
     {
@@ -64,9 +91,16 @@ class SignupWindow extends Ous_event_regaliaSignupWindow
         return $map;
     }
 
-    public function allUserListUsers(?string $query = null): array
+    public function allUserListUsers(string $query = null)
     {
-        $query = $query ?? $this->cms()->helper('users')->userIdentifier();
+        if (!$query) {
+            $user = $this->cms()->helper('users')->user();
+            if ($user) {
+                $query = $user['netid'] ?? $this->cms()->helper('users')->userIdentifier();
+            } else {
+                return null;
+            }
+        }
         // find results
         $results = [];
         foreach ($this->userLists() as $list) {
@@ -76,22 +110,27 @@ class SignupWindow extends Ous_event_regaliaSignupWindow
                 }
             }
         }
-        // return result
+        // cache and return result
         return $results;
     }
 
-    public function firstUserListUser(?string $query = null)
+    public function firstUserListUser(string $query = null)
     {
-        $query = $query ?? $this->cms()->helper('users')->userIdentifier();
-        // find results
+        if (!$query) {
+            $user = $this->cms()->helper('users')->user();
+            if ($user) {
+                $query = $user['netid'] ?? $this->cms()->helper('users')->userIdentifier();
+            } else {
+                return null;
+            }
+        }
         foreach ($this->userLists() as $list) {
-            foreach ($list->findAll($query) as $user) {
+            if ($user = $list->findFirst($query)) {
                 if ($this->filterUserListUser($user)) {
                     return $user;
                 }
             }
         }
-        return null;
     }
 
     protected function filterUserListUser(array $degree): bool

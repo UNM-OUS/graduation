@@ -1,0 +1,38 @@
+{
+  "bootstrap": {
+    "pdos": {
+      "degrees": {
+        "dsn": "sqlite:${paths.storage}/degrees.sqlite"
+      }
+    }
+  },
+  "users": {
+    "managers": {
+      "pastdegree": {
+        "name": "Past student signin",
+        "class": "${module.namespace}\\Users\\PastDegreeUserManager",
+        "signup": true,
+        "signin": true
+      }
+    }
+  },
+  "permissions": {
+    "url": {
+      "_user/signup": [
+        "allow all"
+      ]
+    }
+  },
+  "strings": {
+    "urls": {
+      "common": {
+        "_user/signin": "Sign in"
+      }
+    }
+  },
+  "types": {
+    "users": {
+      "pastdegree": "${module.namespace}\\Users\\PastDegreeUser"
+    }
+  }
+}
