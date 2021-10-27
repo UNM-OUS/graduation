@@ -103,7 +103,7 @@ function buildCardBack(Signup $signup): string
         margin-top: 0.75in;
     }
 
-    .reader-card-page:nth-child(even) {
+    .reader-card-page:nth-child(odd) {
         flex-direction: row-reverse;
     }
 
