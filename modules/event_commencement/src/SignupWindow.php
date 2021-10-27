@@ -18,6 +18,15 @@ class SignupWindow extends Ous_event_regaliaSignupWindow
 
     protected $emailVerificationNotified;
 
+    public function actions($links)
+    {
+        $links = parent::actions($links);
+        if (strpos($this['signup_windowtype'],'student') !== false) {
+            $links['readercards'] = '!id/readercards';
+        }
+        return $links;
+    }
+
     public function signupAllowed(): bool
     {
         if (parent::signupAllowed()) {

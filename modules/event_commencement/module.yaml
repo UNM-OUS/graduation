@@ -67,5 +67,7 @@ events:
         waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
 
 permissions:
+  url:
+    event-signupwindow/readercards: [deny all, allow group editor]
   events:
     signup/customdegree: [allow group editor]
