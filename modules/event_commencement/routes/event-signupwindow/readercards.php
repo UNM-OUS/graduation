@@ -67,9 +67,13 @@ function buildCardFront(Signup $signup): string
     if ($signup->degreeCategory() == 'Doctoral/Terminal') {
         $out .= '<div class="readercard-program">' . $signup['degree.degree_val.program'] . '</div>';
         if ($signup['hooder.signup'] && $hooder = $signup->cms()->read($signup['hooder.signup'])) {
-            $out .= '<div class="readercard-hooder">Hooded by Dr. ' . $hooder->name() . '</div>';
+            if (stripos($hooder->signupWindow()->name(), 'platform') !== false) {
+                $out .= '<div class="readercard-hooder hooder-platform">Hooded by Dr. ' . $hooder->name() . '</div>';
+            } else {
+                $out .= '<div class="readercard-hooder">Hooded by Dr. ' . $hooder->name() . '</div>';
+            }
         } else {
-            $out .= '<div class="readercard-hooder hooder-missing">Hooded by</div>';
+            $out .= '<div class="readercard-hooder hooder-missing">Hooded by <span class="blank-space"></span></div>';
         }
     } else {
         $out .= '<div class="readercard-college">' . $signup['degree.degree_val.college'] . '</div>';
@@ -164,10 +168,16 @@ function buildCardBack(Signup $signup): string
         margin-top: 10pt;
     }
 
-    .hooder-missing {
+    .hooder-missing,
+    .hooder-platform {
         padding: 10pt;
         background: #fee;
     }
+
+    .hooder-missing {
+        text-align: left;
+    }
+
 
     .readercard-college {
         position: absolute;

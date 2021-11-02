@@ -21,8 +21,11 @@ class SignupWindow extends Ous_event_regaliaSignupWindow
     public function actions($links)
     {
         $links = parent::actions($links);
-        if (strpos($this['signup_windowtype'],'student') !== false) {
+        if (strpos($this['signup_windowtype'], 'student') !== false) {
             $links['readercards'] = '!id/readercards';
+            if (stripos($this->name(), 'doctoral') !== false) {
+                $links['hooders'] = '!id/hooders';
+            }
         }
         return $links;
     }
@@ -38,7 +41,7 @@ class SignupWindow extends Ous_event_regaliaSignupWindow
                 } else {
                     if (!$this->emailVerificationNotified) {
                         $url = $this->cms()->helper('urls')->parse('_user/verify');
-                        $this->cms()->helper('notifications')->printError("You must <a href='$url'>verify your email</a> to use \"" . $this->name()."\"");
+                        $this->cms()->helper('notifications')->printError("You must <a href='$url'>verify your email</a> to use \"" . $this->name() . "\"");
                         $this->emailVerificationNotified = true;
                     }
                     return false;
