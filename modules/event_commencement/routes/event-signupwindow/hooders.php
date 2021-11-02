@@ -1,7 +1,9 @@
 <?php
 
 use Digraph\Forms\Form;
+use Digraph\Modules\event_commencement\Chunks\HooderAutocomplete;
 use Digraph\Modules\event_commencement\Signup;
+use Digraph\Modules\event_commencement\SignupWindow;
 use Formward\Fields\Select;
 
 $package->cache_noStore();
@@ -98,10 +100,38 @@ if ($noHooder) {
             }
         }
         if ($options) {
+            // form for picking existing hooder
             $form = new Form('', $program);
             $form['hooder'] = new Select('Existing hooders for this program');
             $form['hooder']->required(true);
             $form['hooder']->options($options);
+            if ($form->handle()) {
+                foreach ($programStudents as $student) {
+                    $student['hooder.signup'] = $form['hooder']->value();
+                    $student->update();
+                }
+                $package->redirect($package->url());
+            } else {
+                echo $form;
+            }
+        } else {
+            // form for picking arbitrary hooder
+            $signupWindows = array_filter(
+                $package->noun()->eventGroup()->signupWindows(),
+                function (SignupWindow $w) {
+                    return $w['signup_windowtype'] == 'faculty';
+                }
+            );
+            $signupWindows = array_map(
+                function (SignupWindow $w) {
+                    return $w['dso.id'];
+                },
+                $signupWindows
+            );
+            $form = new Form('', $program);
+            $form['hooder'] = new HooderAutocomplete('Select an arbitrary hooder');
+            $form['hooder']->srcArg('windows', implode(',', $signupWindows));
+            $form['hooder']->required(true);
             if ($form->handle()) {
                 foreach ($programStudents as $student) {
                     $student['hooder.signup'] = $form['hooder']->value();
