@@ -22,7 +22,11 @@ class Signup extends Ous_event_regaliaSignup
 
     public function degreeCategory()
     {
-        return SignupWindow::degreeLevel($this['degree.degree_val']);
+        if ($this['degree.degree_val']) {
+            return SignupWindow::degreeLevel($this['degree.degree_val']);
+        } else {
+            return 'Unknown';
+        }
     }
 
     public function customDegree(): ?array
