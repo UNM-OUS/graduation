@@ -51,16 +51,16 @@ for ($pos = 0; $pos < 6; $pos++) {
 foreach ($pages as $pid => $page) {
     echo "<div class='reader-card-page'>";
     foreach ($page as $card) {
-        echo '<div class="reader-card">';
         echo $card;
-        echo '</div>';
     }
     echo "</div>";
 }
 
 function buildCardFront(Signup $signup): string
 {
-    $out =  '<div class="readercard-letter letter-' . strtolower(substr($signup['contact.lastname'], 0, 1)) . '">' . strtoupper(substr($signup['contact.lastname'], 0, 1)) . '</div>';
+    $classes = cardClasses($signup);
+    $out = '<div class="' . implode(' ', $classes) . '">';
+    $out .=  '<div class="readercard-letter letter-' . strtolower(substr($signup['contact.lastname'], 0, 1)) . '">' . strtoupper(substr($signup['contact.lastname'], 0, 1)) . '</div>';
     $out .= '<div class="readercard-category readercard-category-' . preg_replace('/[^a-z]/', '', strtolower($signup->degreeCategory())) . '">' . $signup->degreeCategory() . '</div>';
     $out .= '<div class="readercard-name">' . $signup->name() . '</div>';
     $out .= '<div class="readercard-pronunciation">' . $signup['contact.pronunciation'] . '</div>';
@@ -78,21 +78,45 @@ function buildCardFront(Signup $signup): string
     } else {
         $out .= '<div class="readercard-college">' . $signup['degree.degree_val.college'] . '</div>';
     }
+    $out .= '</div>';
     return $out;
 }
 
 function buildCardBack(Signup $signup): string
 {
+    $classes = cardClasses($signup);
+    $out = '<div class="' . implode(' ', $classes) . '">';
     $qr = new Writer(new ImageRenderer(
         new RendererStyle(400),
         new SvgImageBackEnd()
     ));
-    $out = '<div class="readercard-id">' . $qr->writeString($signup['dso.id']) . '</div>';
+    $out .= '<div class="readercard-id">' . $qr->writeString($signup['dso.id']) . '</div>';
     $out .= '<div class="readercard-email">' . $signup['contact.email'] . '</div>';
     $out .= '<div class="readercard-instructions">';
     $out .= 'TODO: instructions';
     $out .= '</div>';
+    $out .= '</div>';
     return $out;
+}
+
+function cardClasses(Signup $signup): array
+{
+    $classes = [
+        'reader-card'
+    ];
+    if ($signup['spa.required']) {
+        $classes[] = 'reader-card-spa';
+    }
+    if ($signup->degreeCategory() == 'Doctoral/Terminal') {
+        if ($signup['hooder.signup'] && $hooder = $signup->cms()->read($signup['hooder.signup'])) {
+            if (stripos($hooder->signupWindow()->name(), 'platform') !== false) {
+                $classes[] = 'reader-card-hooder-platform';
+            }
+        } else {
+            $classes[] = 'reader-card-hooder-missing';
+        }
+    }
+    return $classes;
 }
 
 ?>
@@ -171,7 +195,7 @@ function buildCardBack(Signup $signup): string
     .hooder-missing,
     .hooder-platform {
         padding: 10pt;
-        background: #fee;
+        background: rgba(255,255,255,0.5);
     }
 
     .hooder-missing {
@@ -197,6 +221,26 @@ function buildCardBack(Signup $signup): string
     .readercard-instructions {
         text-align: left;
         font-size: 10pt;
+    }
+
+    .reader-card-spa {
+        background-color: #dfefff;
+    }
+
+    .reader-card-hooder-platform {
+        background-color: #fdf;
+    }
+
+    .reader-card-hooder-missing {
+        background-color: #fee;
+    }
+
+    .reader-card-spa.reader-card-hooder-platform {
+        background: linear-gradient(90deg, #dfefff 45%, #fdf 55%);
+    }
+
+    .reader-card-spa.reader-card-hooder-missing {
+        background: linear-gradient(90deg, #dfefff 45%, #fee 55%);
     }
 
     @media print {
