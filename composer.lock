@@ -218,16 +218,16 @@
         },
         {
             "name": "byjoby/formward",
-            "version": "v0.4.2",
+            "version": "v0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jobyone/formward.git",
-                "reference": "3de4b1fce741afa21afe43723a6b965ca85db173"
+                "reference": "b3041caad4a22bedb2c0a8a8b4ec1bb3c65f5816"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jobyone/formward/zipball/3de4b1fce741afa21afe43723a6b965ca85db173",
-                "reference": "3de4b1fce741afa21afe43723a6b965ca85db173",
+                "url": "https://api.github.com/repos/jobyone/formward/zipball/b3041caad4a22bedb2c0a8a8b4ec1bb3c65f5816",
+                "reference": "b3041caad4a22bedb2c0a8a8b4ec1bb3c65f5816",
                 "shasum": ""
             },
             "require": {
@@ -263,9 +263,9 @@
             "description": "Forms with sane defaults and simple interfaces to skip the boilerplate code and just put a form on the page",
             "support": {
                 "issues": "https://github.com/jobyone/formward/issues",
-                "source": "https://github.com/jobyone/formward/tree/v0.4.2"
+                "source": "https://github.com/jobyone/formward/tree/v0.4.3"
             },
-            "time": "2021-09-17T17:04:44+00:00"
+            "time": "2021-11-29T17:56:22+00:00"
         },
         {
             "name": "byjoby/html-object-strings",
@@ -1523,16 +1523,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.5.1",
+            "version": "v6.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355"
+                "reference": "baeb7cde6b60b1286912690ab0693c7789a31e71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/dd803df5ad7492e1b40637f7ebd258fee5ca7355",
-                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/baeb7cde6b60b1286912690ab0693c7789a31e71",
+                "reference": "baeb7cde6b60b1286912690ab0693c7789a31e71",
                 "shasum": ""
             },
             "require": {
@@ -1589,7 +1589,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.5.1"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.5.3"
             },
             "funding": [
                 {
@@ -1597,7 +1597,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-18T09:14:16+00:00"
+            "time": "2021-11-25T16:34:11+00:00"
         },
         {
             "name": "psr/cache",
@@ -2679,12 +2679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "4a6894ae244b6b8faafecd5be1d232d73889b64d"
+                "reference": "5ab375d97af1955f7a78771e0b8c62c9e82e3790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/4a6894ae244b6b8faafecd5be1d232d73889b64d",
-                "reference": "4a6894ae244b6b8faafecd5be1d232d73889b64d",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/5ab375d97af1955f7a78771e0b8c62c9e82e3790",
+                "reference": "5ab375d97af1955f7a78771e0b8c62c9e82e3790",
                 "shasum": ""
             },
             "require": {
@@ -2701,7 +2701,7 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2021-09-21T15:26:29+00:00"
+            "time": "2021-11-29T18:12:56+00:00"
         },
         {
             "name": "unmous/ous_event_management",
@@ -2709,12 +2709,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_event_management.git",
-                "reference": "0b45d51b36c8bec7412ad8b4c0b68472d392ff78"
+                "reference": "f202f3be815401eb8b0cc933b8a9d8ffdbc25ced"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_event_management/zipball/0b45d51b36c8bec7412ad8b4c0b68472d392ff78",
-                "reference": "0b45d51b36c8bec7412ad8b4c0b68472d392ff78",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_event_management/zipball/f202f3be815401eb8b0cc933b8a9d8ffdbc25ced",
+                "reference": "f202f3be815401eb8b0cc933b8a9d8ffdbc25ced",
                 "shasum": ""
             },
             "require": {
@@ -2734,7 +2734,7 @@
                 "source": "https://github.com/UNM-OUS/ous_event_management/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_event_management/issues"
             },
-            "time": "2021-11-24T16:42:31+00:00"
+            "time": "2021-11-24T17:07:59+00:00"
         },
         {
             "name": "unmous/ous_event_regalia",
