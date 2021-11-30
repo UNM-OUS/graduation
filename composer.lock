@@ -218,16 +218,16 @@
         },
         {
             "name": "byjoby/formward",
-            "version": "v0.4.3",
+            "version": "v0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jobyone/formward.git",
-                "reference": "b3041caad4a22bedb2c0a8a8b4ec1bb3c65f5816"
+                "reference": "253d9ba37f55d0c4a1c8870b3ef48c645fae9045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jobyone/formward/zipball/b3041caad4a22bedb2c0a8a8b4ec1bb3c65f5816",
-                "reference": "b3041caad4a22bedb2c0a8a8b4ec1bb3c65f5816",
+                "url": "https://api.github.com/repos/jobyone/formward/zipball/253d9ba37f55d0c4a1c8870b3ef48c645fae9045",
+                "reference": "253d9ba37f55d0c4a1c8870b3ef48c645fae9045",
                 "shasum": ""
             },
             "require": {
@@ -263,9 +263,9 @@
             "description": "Forms with sane defaults and simple interfaces to skip the boilerplate code and just put a form on the page",
             "support": {
                 "issues": "https://github.com/jobyone/formward/issues",
-                "source": "https://github.com/jobyone/formward/tree/v0.4.3"
+                "source": "https://github.com/jobyone/formward/tree/v0.4.4"
             },
-            "time": "2021-11-29T17:56:22+00:00"
+            "time": "2021-11-30T17:24:22+00:00"
         },
         {
             "name": "byjoby/html-object-strings",
