@@ -2679,12 +2679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "7bfc478eb7e5a8b7d964f63623ba9835df874c1b"
+                "reference": "e6e2c71b2cf3b96b8adae2a1769d2d3b07151010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/7bfc478eb7e5a8b7d964f63623ba9835df874c1b",
-                "reference": "7bfc478eb7e5a8b7d964f63623ba9835df874c1b",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/e6e2c71b2cf3b96b8adae2a1769d2d3b07151010",
+                "reference": "e6e2c71b2cf3b96b8adae2a1769d2d3b07151010",
                 "shasum": ""
             },
             "require": {
@@ -2701,7 +2701,7 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2021-11-30T18:28:45+00:00"
+            "time": "2021-11-30T20:13:44+00:00"
         },
         {
             "name": "unmous/ous_event_management",
