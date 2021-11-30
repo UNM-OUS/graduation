@@ -828,12 +828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core-types.git",
-                "reference": "6f89a41da810c46c15246c8e5e294e28a1b8e20c"
+                "reference": "f850e5a07a4cb34921fde211f853a6486065b7a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core-types/zipball/6f89a41da810c46c15246c8e5e294e28a1b8e20c",
-                "reference": "6f89a41da810c46c15246c8e5e294e28a1b8e20c",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core-types/zipball/f850e5a07a4cb34921fde211f853a6486065b7a3",
+                "reference": "f850e5a07a4cb34921fde211f853a6486065b7a3",
                 "shasum": ""
             },
             "require": {
@@ -861,7 +861,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core-types/issues",
                 "source": "https://github.com/digraph-cms/digraph-core-types/tree/main"
             },
-            "time": "2021-09-13T15:28:32+00:00"
+            "time": "2021-11-30T18:21:05+00:00"
         },
         {
             "name": "digraphcms/digraph-project-core",
@@ -2679,12 +2679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "5ab375d97af1955f7a78771e0b8c62c9e82e3790"
+                "reference": "7bfc478eb7e5a8b7d964f63623ba9835df874c1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/5ab375d97af1955f7a78771e0b8c62c9e82e3790",
-                "reference": "5ab375d97af1955f7a78771e0b8c62c9e82e3790",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/7bfc478eb7e5a8b7d964f63623ba9835df874c1b",
+                "reference": "7bfc478eb7e5a8b7d964f63623ba9835df874c1b",
                 "shasum": ""
             },
             "require": {
@@ -2701,7 +2701,7 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2021-11-29T18:12:56+00:00"
+            "time": "2021-11-30T18:28:45+00:00"
         },
         {
             "name": "unmous/ous_event_management",
