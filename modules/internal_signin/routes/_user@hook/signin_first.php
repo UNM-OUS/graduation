@@ -33,7 +33,7 @@ $url_signup['verb'] = 'signup';
 
 </div>
 
-<div class="digraph-card incidental">
+<div class="digraph-card incidental" style="background:rgba(237, 139, 0, 0.25);">
     <h2>Login for other users</h2>
     <p>
         If you last took a class more than a year ago and no longer have access to your NetID, you can
