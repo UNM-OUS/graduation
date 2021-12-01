@@ -13,9 +13,18 @@ $signupwindow = $package->noun();
 
 /** @var Signup[] */
 $signups = $signupwindow->allSignups();
-//filter incomplete signups
+//filter incomplete signups, or signups that aren't for a primary event
 $signups = array_filter($signups, function (Signup $e) {
-    return $e->complete() && $e->degreeCategory() == 'Doctoral/Terminal';
+    if ($e->degreeCategory() != 'Doctoral/Terminal') {
+        return false;
+    }
+    if (!$e->complete()) {
+        return false;
+    }
+    if (!$e->primaryEvents()) {
+        return false;
+    }
+    return true;
 });
 //sort
 usort($signups, function (Signup $a, Signup $b) {
@@ -46,7 +55,7 @@ $noHooder = array_filter(
     }
 );
 
-echo "<h2>Hooders assigned</h2>";
+echo "<h2>Hooders assigned (" . count($hasHooder) . ")</h2>";
 $hooders = [];
 $hooderID = '--none--';
 $hooder = null;
@@ -70,8 +79,42 @@ foreach ($hasHooder as $student) {
 }
 echo "</ul>";
 
+echo "<h2>Hooding faculty</h2>";
+printf(
+    "<p><strong>Email addresses</strong><br><textarea style='width:100%%;height:5em;'>%s</textarea></p>",
+    implode("; ", array_map(
+        function (Signup $signup): string {
+            return $signup->contactInfo()->email();
+        },
+        $hooders
+    ))
+);
+printf(
+    "<ul>%s</ul>",
+    implode("", array_map(
+        function (Signup $signup): string {
+            return sprintf(
+                "<li>%s<br><small>%s, %s</small></li>",
+                $signup->name(),
+                $signup['unm.college'],
+                $signup['unm.department']
+            );
+        },
+        $hooders
+    ))
+);
+
 if ($noHooder) {
-    echo "<h2>No hooder assigned</h2>";
+    echo "<h2>No hooder assigned (" . count($noHooder) . ")</h2>";
+    printf(
+        "<p><strong>Email addresses (don't forget to BCC)</strong><br><textarea style='width:100%%;height:5em;'>%s</textarea></p>",
+        implode("; ", array_map(
+            function (Signup $signup): string {
+                return $signup->contactInfo()->email();
+            },
+            $noHooder
+        ))
+    );
     $programs = array_unique(array_map(
         function (Signup $signup): string {
             return $signup['degree.degree_val.program'];
@@ -92,56 +135,34 @@ if ($noHooder) {
             }
         }
         echo "</ul>";
-        $options = [];
-        foreach ($hasHooder as $student) {
-            if ($student['degree.degree_val.program'] === $program) {
-                $hooder = $cms->read($student['hooder.signup']);
-                $options[$student['hooder.signup']] = $hooder ? $hooder->name() . ": " . $hooder['unm.college'] . ", " . $hooder['unm.department'] : false;
+
+        // form for picking arbitrary hooder
+        $signupWindows = array_filter(
+            $package->noun()->eventGroup()->signupWindows(),
+            function (SignupWindow $w) {
+                return $w['signup_windowtype'] == 'faculty';
             }
-        }
-        if ($options) {
-            // form for picking existing hooder
-            $form = new Form('', $program);
-            $form['hooder'] = new Select('Existing hooders for this program');
-            $form['hooder']->required(true);
-            $form['hooder']->options($options);
-            if ($form->handle()) {
-                foreach ($programStudents as $student) {
-                    $student['hooder.signup'] = $form['hooder']->value();
-                    $student->update();
-                }
-                $package->redirect($package->url());
-            } else {
-                echo $form;
+        );
+        $signupWindows = array_map(
+            function (SignupWindow $w) {
+                return $w['dso.id'];
+            },
+            $signupWindows
+        );
+        $form = new Form('', $program);
+        $form['hooder'] = new HooderAutocomplete('Select a hooder');
+        $form['hooder']->srcArg('windows', implode(',', $signupWindows));
+        $form['hooder']->required(true);
+        if ($form->handle()) {
+            foreach ($programStudents as $student) {
+                $student['hooder.signup'] = $form['hooder']->value();
+                $student->update();
             }
+            $package->redirect($package->url());
         } else {
-            // form for picking arbitrary hooder
-            $signupWindows = array_filter(
-                $package->noun()->eventGroup()->signupWindows(),
-                function (SignupWindow $w) {
-                    return $w['signup_windowtype'] == 'faculty';
-                }
-            );
-            $signupWindows = array_map(
-                function (SignupWindow $w) {
-                    return $w['dso.id'];
-                },
-                $signupWindows
-            );
-            $form = new Form('', $program);
-            $form['hooder'] = new HooderAutocomplete('Select an arbitrary hooder');
-            $form['hooder']->srcArg('windows', implode(',', $signupWindows));
-            $form['hooder']->required(true);
-            if ($form->handle()) {
-                foreach ($programStudents as $student) {
-                    $student['hooder.signup'] = $form['hooder']->value();
-                    $student->update();
-                }
-                $package->redirect($package->url());
-            } else {
-                echo $form;
-            }
+            echo $form;
         }
+
         echo "</div>";
     }
 }
