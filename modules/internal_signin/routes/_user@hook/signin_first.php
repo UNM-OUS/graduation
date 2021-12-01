@@ -7,6 +7,8 @@ if ($package['url.args.manager']) {
 
 define('SIGN_IN_BLOCKED', true);
 
+$package['response.template'] = 'iframe.twig';
+
 $url_netid = $package->url();
 $url_netid['args.manager'] = 'netid';
 
@@ -18,6 +20,12 @@ $url_signup['args.manager'] = 'pastdegree';
 $url_signup['verb'] = 'signup';
 
 ?>
+
+<style>
+h1 {
+    display: none;
+}
+</style>
 
 <div class="notification" style="background:#63666a;">
 
