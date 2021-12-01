@@ -10,11 +10,12 @@ $package->cache_noStore();
 
 /** @var \Digraph\Modules\event_commencement\SignupWindow */
 $signupwindow = $package->noun();
+$perPage = 3;
 
 $signups = $signupwindow->allSignups();
 //filter incomplete signups
 $signups = array_filter($signups, function ($e) {
-    return $e->complete();
+    return $e->complete() && $e->primaryEvents();
 });
 //sort
 usort($signups, function ($a, $b) {
@@ -32,13 +33,13 @@ usort($signups, function ($a, $b) {
     return 0;
 });
 //turn into an array of fronts/backs of pages
-$pageCount = ceil(count($signups) / 6);
+$pageCount = ceil(count($signups) / $perPage);
 $pages = [];
 for ($i = 0; $i < $pageCount; $i++) {
     $pages[$i * 2] = [null, null, null, null, null, null];
     $pages[$i * 2 + 1] = [null, null, null, null, null, null];
 }
-for ($pos = 0; $pos < 6; $pos++) {
+for ($pos = 0; $pos < $perPage; $pos++) {
     for ($page = 0; $page < $pageCount; $page++) {
         if ($signup = array_shift($signups)) {
             $pages[$page * 2][$pos] = buildCardFront($signup);
@@ -127,6 +128,7 @@ function cardClasses(Signup $signup): array
         width: 8in;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         margin: 0 auto;
         margin-top: 0.75in;
     }
@@ -138,7 +140,7 @@ function cardClasses(Signup $signup): array
     .reader-card {
         position: relative;
         height: 3in;
-        width: 4in;
+        width: 5in;
         font-size: 12pt;
         line-height: 1.2;
         text-align: center;
