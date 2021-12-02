@@ -1,9 +1,5 @@
 <?php
 
-use BaconQrCode\Renderer\Image\SvgImageBackEnd;
-use BaconQrCode\Renderer\ImageRenderer;
-use BaconQrCode\Renderer\RendererStyle\RendererStyle;
-use BaconQrCode\Writer;
 use Digraph\Modules\event_commencement\Signup;
 
 $package->cache_noStore();
@@ -87,14 +83,24 @@ function buildCardBack(Signup $signup): string
 {
     $classes = cardClasses($signup);
     $out = '<div class="' . implode(' ', $classes) . '">';
-    $qr = new Writer(new ImageRenderer(
-        new RendererStyle(400),
-        new SvgImageBackEnd()
-    ));
-    $out .= '<div class="readercard-id">' . $qr->writeString($signup['dso.id']) . '</div>';
     $out .= '<div class="readercard-email">' . $signup['contact.email'] . '</div>';
     $out .= '<div class="readercard-instructions">';
-    $out .= 'TODO: instructions';
+    $out .= '<p><strong>Keep this card with you.</strong> You will need to hand it to the readers as you walk across the stage so that they can read your name.</p>';
+    $out .= '<p>';
+    switch ($signup->degreeCategory()) {
+        case 'Doctoral/Terminal':
+            $out .= 'Wait in the nearby area until you are prompted by the marshals to line up and process into the ceremony seating area.';
+            break;
+        case 'Master':
+            $out .= 'Wait in the nearby area until you are prompted by the marshals to line up and process into the ceremony seating area.';
+            break;
+        case 'Bachelor':
+            $out .= 'Sit in the bleachers in the area designated for your school or college, the marshals will prompt you when it is time to process into the ceremony seating area.';
+            break;
+    }
+    $out .= ' Once the ceremony begins you will be instructed by the Marshals on when and where to walk.</p>';
+    $out .= '<p><strong>Keep your belongings with you.</strong> There is nowhere for you to store personal belongings, and you may not return to the same seat after walking across the stage.</p>';
+    $out .= '<p>Marshals will instruct you on when and where to exit the seating area at the end of the ceremony.</p>';
     $out .= '</div>';
     $out .= '</div>';
     return $out;
@@ -197,7 +203,7 @@ function cardClasses(Signup $signup): array
     .hooder-missing,
     .hooder-platform {
         padding: 10pt;
-        background: rgba(255,255,255,0.5);
+        background: rgba(255, 255, 255, 0.5);
     }
 
     .hooder-missing {
