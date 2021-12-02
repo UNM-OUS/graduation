@@ -56,7 +56,7 @@ foreach ($pages as $pid => $page) {
 function buildCardFront(Signup $signup): string
 {
     $classes = cardClasses($signup);
-    $out = '<div class="' . implode(' ', $classes) . '">';
+    $out = '<div class="reader-card-front ' . implode(' ', $classes) . '">';
     $out .=  '<div class="readercard-letter letter-' . strtolower(substr($signup['contact.lastname'], 0, 1)) . '">' . strtoupper(substr($signup['contact.lastname'], 0, 1)) . '</div>';
     $out .= '<div class="readercard-category readercard-category-' . preg_replace('/[^a-z]/', '', strtolower($signup->degreeCategory())) . '">' . $signup->degreeCategory() . '</div>';
     $out .= '<div class="readercard-name">' . $signup->name() . '</div>';
@@ -82,7 +82,7 @@ function buildCardFront(Signup $signup): string
 function buildCardBack(Signup $signup): string
 {
     $classes = cardClasses($signup);
-    $out = '<div class="' . implode(' ', $classes) . '">';
+    $out = '<div class="reader-card-back ' . implode(' ', $classes) . '">';
     $out .= '<div class="readercard-email">' . $signup['contact.email'] . '</div>';
     $out .= '<div class="readercard-instructions">';
     $out .= '<p><strong>Keep this card with you.</strong> You will need to hand it to the readers as you walk across the stage so that they can read your name.</p>';
@@ -135,6 +135,7 @@ function cardClasses(Signup $signup): array
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-content: flex-start;
         margin: 0 auto;
         margin-top: 0.75in;
     }
@@ -231,24 +232,25 @@ function cardClasses(Signup $signup): array
         font-size: 10pt;
     }
 
-    .reader-card-spa {
-        background-color: #dfefff;
+    .reader-card-front:after {
+        position:absolute;
+        left: 10pt;
+        right: 10pt;
+        bottom: 10pt;
+        display: block;
+        content: '';
     }
 
-    .reader-card-hooder-platform {
-        background-color: #fdf;
+    .reader-card-spa:after {
+        border-bottom: 20pt solid #dfefff;
     }
 
-    .reader-card-hooder-missing {
-        background-color: #fee;
+    .reader-card-hooder-platform:after {
+        border-top: 20pt solid #fdf;
     }
 
-    .reader-card-spa.reader-card-hooder-platform {
-        background: linear-gradient(90deg, #dfefff 45%, #fdf 55%);
-    }
-
-    .reader-card-spa.reader-card-hooder-missing {
-        background: linear-gradient(90deg, #dfefff 45%, #fee 55%);
+    .reader-card-hooder-missing:after {
+        border-top: 20pt solid #fee;
     }
 
     @media print {
