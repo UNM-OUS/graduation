@@ -2742,12 +2742,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_event_regalia.git",
-                "reference": "1038cc76c0ea6c9892fbf7cd1d8f9e779b061ee5"
+                "reference": "44899d29dfe7767e429e0eb3a84702257a9b3502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_event_regalia/zipball/1038cc76c0ea6c9892fbf7cd1d8f9e779b061ee5",
-                "reference": "1038cc76c0ea6c9892fbf7cd1d8f9e779b061ee5",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_event_regalia/zipball/44899d29dfe7767e429e0eb3a84702257a9b3502",
+                "reference": "44899d29dfe7767e429e0eb3a84702257a9b3502",
                 "shasum": ""
             },
             "default-branch": true,
@@ -2761,7 +2761,7 @@
                 "source": "https://github.com/UNM-OUS/ous_event_regalia/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_event_regalia/issues"
             },
-            "time": "2021-09-13T15:38:41+00:00"
+            "time": "2021-12-02T19:02:14+00:00"
         }
     ],
     "packages-dev": [],
