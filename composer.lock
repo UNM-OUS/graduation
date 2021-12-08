@@ -725,12 +725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "bf285dda1d4994e1dbce8c71185e01566e254efc"
+                "reference": "87acb8fd74e9d6f74707867b1ed04b4c5d8fd84e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/bf285dda1d4994e1dbce8c71185e01566e254efc",
-                "reference": "bf285dda1d4994e1dbce8c71185e01566e254efc",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/87acb8fd74e9d6f74707867b1ed04b4c5d8fd84e",
+                "reference": "87acb8fd74e9d6f74707867b1ed04b4c5d8fd84e",
                 "shasum": ""
             },
             "require": {
@@ -787,7 +787,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v1"
             },
-            "time": "2021-12-08T17:20:57+00:00"
+            "time": "2021-12-08T18:26:27+00:00"
         },
         {
             "name": "digraphcms/digraph-core-themes",
@@ -865,16 +865,16 @@
         },
         {
             "name": "digraphcms/digraph-project-core",
-            "version": "v1.1.7",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-project-core.git",
-                "reference": "2562573a993e487b2b784c3e377ca691adeecc3a"
+                "reference": "390e0c18d9e5ced32807f0da119992571210e150"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-project-core/zipball/2562573a993e487b2b784c3e377ca691adeecc3a",
-                "reference": "2562573a993e487b2b784c3e377ca691adeecc3a",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-project-core/zipball/390e0c18d9e5ced32807f0da119992571210e150",
+                "reference": "390e0c18d9e5ced32807f0da119992571210e150",
                 "shasum": ""
             },
             "require": {
@@ -902,9 +902,9 @@
             "description": "Package to allow Digraph projects created using digraph-project to have many default config options, file creation scripts, and other boilerplate tracked by Composer.",
             "support": {
                 "issues": "https://github.com/digraph-cms/digraph-project-core/issues",
-                "source": "https://github.com/digraph-cms/digraph-project-core/tree/v1.1.7"
+                "source": "https://github.com/digraph-cms/digraph-project-core/tree/v1.1.8"
             },
-            "time": "2021-09-13T17:08:21+00:00"
+            "time": "2021-12-08T18:28:44+00:00"
         },
         {
             "name": "envms/fluentpdo",
@@ -2679,12 +2679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "e6e2c71b2cf3b96b8adae2a1769d2d3b07151010"
+                "reference": "461ae45c5aa3635a8082de25b4ee5edca3eb1ab8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/e6e2c71b2cf3b96b8adae2a1769d2d3b07151010",
-                "reference": "e6e2c71b2cf3b96b8adae2a1769d2d3b07151010",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/461ae45c5aa3635a8082de25b4ee5edca3eb1ab8",
+                "reference": "461ae45c5aa3635a8082de25b4ee5edca3eb1ab8",
                 "shasum": ""
             },
             "require": {
@@ -2701,7 +2701,7 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2021-11-30T20:13:44+00:00"
+            "time": "2021-12-08T17:41:09+00:00"
         },
         {
             "name": "unmous/ous_event_management",
