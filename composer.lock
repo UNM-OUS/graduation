@@ -725,12 +725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "ed0f9c06da6e538ca20a6f963b102f9852fe0128"
+                "reference": "3cff71c79d0f48320a747b5ef732fd750e7ce7ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/ed0f9c06da6e538ca20a6f963b102f9852fe0128",
-                "reference": "ed0f9c06da6e538ca20a6f963b102f9852fe0128",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/3cff71c79d0f48320a747b5ef732fd750e7ce7ca",
+                "reference": "3cff71c79d0f48320a747b5ef732fd750e7ce7ca",
                 "shasum": ""
             },
             "require": {
@@ -787,7 +787,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v1"
             },
-            "time": "2021-12-07T20:59:35+00:00"
+            "time": "2021-12-08T17:02:24+00:00"
         },
         {
             "name": "digraphcms/digraph-core-themes",
