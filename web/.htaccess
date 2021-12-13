@@ -1,3 +1,5 @@
+Redirect 303 / /fall-2021/
+
 # BEGIN DIGRAPH-MANAGED: HTACCESS
 # Do not edit this code, it will be replaced whenever composer update/install runs
 # digraph-project-core/files/htaccess => web/.htaccess
