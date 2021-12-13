@@ -14,7 +14,7 @@ $signups = array_filter($signups, function ($e) {
     return $e->complete() && $e->primaryEvents();
 });
 //sort
-if ($signup->degreeCategory() == 'Doctoral/Terminal' || $signup->degreeCategory() == 'Master') {
+if (stripos($signupwindow->name(), 'undergrad') === false) {
     // graduates sort by name
     usort($signups, function ($a, $b) {
         $sortOrder = [
