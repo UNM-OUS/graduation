@@ -1,6 +1,14 @@
 <?php
 
 /**
+ * Redirect to main page in the fastest way
+ */
+if ($_GET['digraph_url'] == '') {
+    header('Location: /fall-2021/');
+    exit();
+}
+
+/**
  * Check if .maintenance exists, and if so only show maintenance page
  */
 if (is_file(__DIR__ . '/../.maintenance')) {
