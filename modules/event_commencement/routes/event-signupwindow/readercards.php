@@ -14,20 +14,37 @@ $signups = array_filter($signups, function ($e) {
     return $e->complete() && $e->primaryEvents();
 });
 //sort
-usort($signups, function ($a, $b) {
-    $sortOrder = [
-        'degree.degree_val.category',
-        'degree.degree_val.college',
-        'contact.lastname',
-        'contact.firstname'
-    ];
-    foreach ($sortOrder as $k) {
-        if ($a[$k] != $b[$k]) {
-            return strcasecmp($a[$k], $b[$k]);
+if ($signup->degreeCategory() == 'Doctoral/Terminal' || $signup->degreeCategory() == 'Master') {
+    // graduates sort by name
+    usort($signups, function ($a, $b) {
+        $sortOrder = [
+            'contact.lastname',
+            'contact.firstname'
+        ];
+        foreach ($sortOrder as $k) {
+            if ($a[$k] != $b[$k]) {
+                return strcasecmp($a[$k], $b[$k]);
+            }
         }
-    }
-    return 0;
-});
+        return 0;
+    });
+} else {
+    // undergrads sort by category/college, then name
+    usort($signups, function ($a, $b) {
+        $sortOrder = [
+            'degree.degree_val.category',
+            'degree.degree_val.college',
+            'contact.lastname',
+            'contact.firstname'
+        ];
+        foreach ($sortOrder as $k) {
+            if ($a[$k] != $b[$k]) {
+                return strcasecmp($a[$k], $b[$k]);
+            }
+        }
+        return 0;
+    });
+}
 //turn into an array of fronts/backs of pages
 $pageCount = ceil(count($signups) / $perPage);
 $pages = [];
@@ -233,7 +250,7 @@ function cardClasses(Signup $signup): array
     }
 
     .reader-card-front:after {
-        position:absolute;
+        position: absolute;
         left: 10pt;
         right: 10pt;
         bottom: 10pt;
