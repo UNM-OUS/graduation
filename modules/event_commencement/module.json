@@ -94,6 +94,10 @@
       "event-signupwindow/hooders": [
         "deny all",
         "allow group editor"
+      ],
+      "event-signupwindow/hooder_report": [
+        "deny all",
+        "allow group editor"
       ]
     },
     "events": {

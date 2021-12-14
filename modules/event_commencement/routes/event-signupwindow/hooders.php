@@ -4,12 +4,16 @@ use Digraph\Forms\Form;
 use Digraph\Modules\event_commencement\Chunks\HooderAutocomplete;
 use Digraph\Modules\event_commencement\Signup;
 use Digraph\Modules\event_commencement\SignupWindow;
-use Formward\Fields\Select;
 
 $package->cache_noStore();
 
 /** @var \Digraph\Modules\event_commencement\SignupWindow */
 $signupwindow = $package->noun();
+
+printf(
+    "<p><a href='%s'>Printable report for marshals</a></p>",
+    $signupwindow->url('hooder_report')
+);
 
 /** @var Signup[] */
 $signups = $signupwindow->allSignups();
