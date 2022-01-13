@@ -2792,12 +2792,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_event_management.git",
-                "reference": "df0b8947d172fdb6760fe4ec7d77228acd65ec7c"
+                "reference": "93da97a5800cdd98353c40f174ea23275d7c66ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_event_management/zipball/df0b8947d172fdb6760fe4ec7d77228acd65ec7c",
-                "reference": "df0b8947d172fdb6760fe4ec7d77228acd65ec7c",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_event_management/zipball/93da97a5800cdd98353c40f174ea23275d7c66ee",
+                "reference": "93da97a5800cdd98353c40f174ea23275d7c66ee",
                 "shasum": ""
             },
             "require": {
@@ -2817,7 +2817,7 @@
                 "source": "https://github.com/UNM-OUS/ous_event_management/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_event_management/issues"
             },
-            "time": "2022-01-13T15:02:50+00:00"
+            "time": "2022-01-13T17:04:50+00:00"
         },
         {
             "name": "unmous/ous_event_regalia",
