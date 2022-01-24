@@ -9,16 +9,16 @@ use Digraph\Modules\ous_event_regalia\Signup as Ous_event_regaliaSignup;
 class Signup extends Ous_event_regaliaSignup
 {
 
-    protected function myChunks(): array
-    {
-        $chunks = parent::myChunks();
-        /** @var \Digraph\Permissions\PermissionsHelper */
-        $p = $this->cms()->helper('permissions');
-        if ($p->check('signup/customdegree', 'events')) {
-            $chunks['customdegree'] = CustomDegreeChunk::class;
-        }
-        return $chunks;
-    }
+    // protected function myChunks(): array
+    // {
+    //     $chunks = parent::myChunks();
+    //     /** @var \Digraph\Permissions\PermissionsHelper */
+    //     $p = $this->cms()->helper('permissions');
+    //     if ($p->check('signup/customdegree', 'events')) {
+    //         $chunks['customdegree'] = CustomDegreeChunk::class;
+    //     }
+    //     return $chunks;
+    // }
 
     public function degreeCategory()
     {
@@ -29,18 +29,18 @@ class Signup extends Ous_event_regaliaSignup
         }
     }
 
-    public function customDegree(): ?array
-    {
-        if (!$this['customdegree.active']) {
-            return null;
-        }
-        $degree = $this['customdegree'];
-        unset($degree['chunk']);
-        if ($contact = $this->contactInfo()) {
-            $degree['name'] = $contact->name();
-        }
-        return $degree;
-    }
+    // public function customDegree(): ?array
+    // {
+    //     if (!$this['customdegree.active']) {
+    //         return null;
+    //     }
+    //     $degree = $this['customdegree'];
+    //     unset($degree['chunk']);
+    //     if ($contact = $this->contactInfo()) {
+    //         $degree['name'] = $contact->name();
+    //     }
+    //     return $degree;
+    // }
 
     public function degrees(): ?AbstractDegrees
     {
