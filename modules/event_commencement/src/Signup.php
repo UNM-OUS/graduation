@@ -29,18 +29,18 @@ class Signup extends Ous_event_regaliaSignup
         }
     }
 
-    // public function customDegree(): ?array
-    // {
-    //     if (!$this['customdegree.active']) {
-    //         return null;
-    //     }
-    //     $degree = $this['customdegree'];
-    //     unset($degree['chunk']);
-    //     if ($contact = $this->contactInfo()) {
-    //         $degree['name'] = $contact->name();
-    //     }
-    //     return $degree;
-    // }
+    public function customDegree(): ?array
+    {
+        if (!$this['customdegree.active']) {
+            return null;
+        }
+        $degree = $this['customdegree'];
+        unset($degree['chunk']);
+        if ($contact = $this->contactInfo()) {
+            $degree['name'] = $contact->name();
+        }
+        return $degree;
+    }
 
     public function degrees(): ?AbstractDegrees
     {
