@@ -4,7 +4,7 @@
  * Redirect to main page in the fastest way
  */
 if ($_GET['digraph_url'] == '') {
-    header('Location: /fall-2021/');
+    header('Location: /fall-2022/');
     exit();
 }
 
