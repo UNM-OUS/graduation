@@ -9,7 +9,7 @@ $regaliaNames = [
 echo "<div class='digraph-card incidental'>";
 echo "<strong>Regalia requirements</strong>";
 echo '<br>Faculty: ' . (@$regaliaNames[$event['regalia.faculty']] ?? $event['regalia.faculty']);
-echo '<br>Students: ' . (@$regaliaNames[$event['regalia.faculty']] ?? $event['regalia.faculty']);
+echo '<br>Students: ' . (@$regaliaNames[$event['regalia.student']] ?? $event['regalia.student']);
 echo "</div>";
 
 if ($org = $event->organization()) {
