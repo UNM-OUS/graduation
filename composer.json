@@ -23,6 +23,10 @@
         "sort-packages": true,
         "platform": {
             "php": "7.1.33"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
         }
     },
     "extra": {
