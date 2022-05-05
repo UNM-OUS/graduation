@@ -6,7 +6,7 @@ $package->cache_noStore();
 
 /** @var \Digraph\Modules\event_commencement\SignupWindow */
 $signupwindow = $package->noun();
-$perPage = 3;
+$perPage = 6;
 
 $signups = $signupwindow->allSignups();
 //filter incomplete signups
@@ -164,7 +164,7 @@ function cardClasses(Signup $signup): array
     .reader-card {
         position: relative;
         height: 3in;
-        width: 5in;
+        width: 4in;
         font-size: 12pt;
         line-height: 1.2;
         text-align: center;
