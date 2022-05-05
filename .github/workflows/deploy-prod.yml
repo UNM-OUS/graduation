@@ -15,7 +15,7 @@ jobs:
       - uses: php-actions/composer@v6
         with:
           version: 2
-          php_version: 7.1
+          php_version: 7.4
           php_extensions: zip gd
           args: --prefer-source --no-dev --optimize-autoloader --classmap-authoritative --apcu-autoloader
           ssh_key: ${{ secrets.SSH_KEY }}
