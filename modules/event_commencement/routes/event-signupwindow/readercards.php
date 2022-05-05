@@ -102,22 +102,22 @@ function buildCardBack(Signup $signup): string
     $out = '<div class="reader-card-back ' . implode(' ', $classes) . '">';
     $out .= '<div class="readercard-email">' . $signup['contact.email'] . '</div>';
     $out .= '<div class="readercard-instructions">';
-    $out .= '<p><strong>Keep this card with you.</strong> You will need to hand it to the readers as you walk across the stage so that they can read your name.</p>';
+    $out .= '<p><strong>Keep this card with you.</strong> You will hand it to the reader as you cross the stage so they can read your name.</p>';
     $out .= '<p>';
     switch ($signup->degreeCategory()) {
         case 'Doctoral/Terminal':
-            $out .= 'Wait in the nearby area until you are prompted by the marshals to line up and process into the ceremony seating area.';
+            $out .= 'Wait in the nearby area until you are prompted by the marshals to line up and process into the ceremony.';
             break;
         case 'Master':
-            $out .= 'Wait in the nearby area until you are prompted by the marshals to line up and process into the ceremony seating area.';
+            $out .= 'Wait in the nearby area until you are prompted by the marshals to line up and process into the ceremony.';
             break;
         case 'Bachelor':
-            $out .= 'Sit in the bleachers in the area designated for your school or college, the marshals will prompt you when it is time to process into the ceremony seating area.';
+            $out .= 'Sit in the bleachers in the area designated for your school or college, the marshals will prompt you when it is time to process into the ceremony.';
             break;
     }
     $out .= ' Once the ceremony begins you will be instructed by the Marshals on when and where to walk.</p>';
-    $out .= '<p><strong>Keep your belongings with you.</strong> There is nowhere for you to store personal belongings, and you may not return to the same seat after walking across the stage.</p>';
-    $out .= '<p>Marshals will instruct you on when and where to exit the seating area at the end of the ceremony.</p>';
+    $out .= '<p><strong>Keep your belongings with you.</strong> There is nowhere for you to store anything, and you may not return to the same seat after walking.</p>';
+    $out .= '<p>Marshals will instruct you on when and where to exit at the end of the ceremony.</p>';
     $out .= '</div>';
     $out .= '</div>';
     return $out;
@@ -171,6 +171,7 @@ function cardClasses(Signup $signup): array
         padding: 0.25in;
         box-sizing: border-box;
         font-family: sans-serif;
+        overflow: hidden;
     }
 
     .readercard-id {
