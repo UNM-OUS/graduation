@@ -117,7 +117,7 @@ function buildCardBack(Signup $signup): string
     }
     $out .= ' Once the ceremony begins you will be instructed by the Marshals on when and where to walk.</p>';
     $out .= '<p><strong>Keep your belongings with you.</strong> There is nowhere for you to store anything, and you may not return to the same seat after walking.</p>';
-    $out .= '<p>Marshals will instruct you on when and where to exit at the end of the ceremony.</p>';
+    $out .= '<p>Marshals will instruct you on when and where to exit.</p>';
     $out .= '</div>';
     $out .= '</div>';
     return $out;
