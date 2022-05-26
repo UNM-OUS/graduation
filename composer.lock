@@ -2674,16 +2674,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.14.13",
+            "version": "v2.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "66856cd0459df3dc97d32077a98454dc2a0ee75a"
+                "reference": "3b7cedb2f736899a7dbd0ba3d6da335a015f5cc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/66856cd0459df3dc97d32077a98454dc2a0ee75a",
-                "reference": "66856cd0459df3dc97d32077a98454dc2a0ee75a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3b7cedb2f736899a7dbd0ba3d6da335a015f5cc4",
+                "reference": "3b7cedb2f736899a7dbd0ba3d6da335a015f5cc4",
                 "shasum": ""
             },
             "require": {
@@ -2699,7 +2699,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.14-dev"
+                    "dev-master": "2.15-dev"
                 }
             },
             "autoload": {
@@ -2738,7 +2738,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v2.14.13"
+                "source": "https://github.com/twigphp/Twig/tree/v2.15.1"
             },
             "funding": [
                 {
@@ -2750,7 +2750,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-06T06:45:17+00:00"
+            "time": "2022-05-17T05:46:24+00:00"
         },
         {
             "name": "unmous/ous_digraph_module",
@@ -2821,12 +2821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_event_regalia.git",
-                "reference": "26a91cebbb456af21b1f424903ef00a0c32c0d01"
+                "reference": "282354f994aa84399056ac7872757ea33869ec0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_event_regalia/zipball/26a91cebbb456af21b1f424903ef00a0c32c0d01",
-                "reference": "26a91cebbb456af21b1f424903ef00a0c32c0d01",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_event_regalia/zipball/282354f994aa84399056ac7872757ea33869ec0f",
+                "reference": "282354f994aa84399056ac7872757ea33869ec0f",
                 "shasum": ""
             },
             "default-branch": true,
@@ -2840,7 +2840,7 @@
                 "source": "https://github.com/UNM-OUS/ous_event_regalia/tree/main",
                 "issues": "https://github.com/UNM-OUS/ous_event_regalia/issues"
             },
-            "time": "2022-04-05T15:33:56+00:00"
+            "time": "2022-05-26T16:48:23+00:00"
         }
     ],
     "packages-dev": [],
